@@ -26,6 +26,19 @@ class NumbersToWords
       "9" => "nine"
     }
 
+    teens = {
+      "10" => "ten",
+      "11" => "eleven",
+      "12" => "twelve",
+      "13" => "thirteen",
+      "14" => "fourteen",
+      "15" => "fifteen",
+      "16" => "sixteen",
+      "17" => "seventeen",
+      "18" => "eighteen",
+      "19" => "nineteen"
+    }
+
     two_numbers = {
       "2" => "twenty",
       "3" => "thirty",
@@ -51,6 +64,9 @@ class NumbersToWords
     elsif array == 2 && array[1] > 0
       converted_tens = two_numbers.fetch(split_int[0].to_s) + " "  + one_number.fetch(split_int[1].to_s)
       converted_number_catch.push(converted_tens)
+    elsif array == 2 && split_int[0] == 1
+      converted_teens = teens.fetch(@inputted_number)
+      converted_number_catch.push(converted_teens)
     end
     converted_number_catch
   end
